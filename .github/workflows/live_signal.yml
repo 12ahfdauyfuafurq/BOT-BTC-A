@@ -1,6 +1,10 @@
 name: BTC Bot Live Signal
 
 on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
   schedule:
     - cron: '*/15 * * * *' # Every 15 minutes
   workflow_dispatch: # Allow manual trigger
