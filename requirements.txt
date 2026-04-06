@@ -1,0 +1,9 @@
+torch
+numpy
+pandas
+yfinance
+scikit-learn
+joblib
+tqdm
+matplotlib
+requests
