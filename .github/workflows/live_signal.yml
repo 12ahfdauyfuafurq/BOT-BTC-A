@@ -3,15 +3,14 @@ name: BTC Bot Live Signal
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   schedule:
-    - cron: '*/15 * * * *' # Every 15 minutes
-  workflow_dispatch: # Allow manual trigger
+    - cron: '*/5 * * * *'  # Runs every 5 minutes (for Public repositories)
+  workflow_dispatch:      # Allows you to trigger it manually anytime
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
