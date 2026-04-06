@@ -176,16 +176,17 @@ def generate_live_signal():
         
         signal = "BUY / UPTREND" if diff > 0 else "SELL / DOWNTREND"
         emoji = "🚀" if diff > 0 else "📉"
+        change_str = f"📈 *Change:* `+{diff:.2f}`" if diff > 0 else f"📉 *Change:* `{diff:.2f}`"
         
         report = (
             f"*BTC Trading Bot Signal*\n"
-            f"━━━━━━━━━━━━━━━━━━━━\n"
+            "━━━━━━━━━━━━━━━━━━━━\n"
             f"🕒 *Time:* {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
             f"💰 *Price:* ${current_price:,.2f}\n"
             f"🎯 *Forecast (12h):* ${final_forecast:,.2f}\n"
             f"📢 *SIGNAL:* `{signal}` {emoji}\n"
-            f"📈 *Change:* `+{diff:.2f}`" if diff > 0 else f"📉 *Change:* `{diff:.2f}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━"
+            f"{change_str}\n"
+            "━━━━━━━━━━━━━━━━━━━━"
         )
 
         print(f"\n[LIVE SIGNAL REPORT] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
